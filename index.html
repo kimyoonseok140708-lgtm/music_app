@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f6f2" />
+    <title>오늘의 음악</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="오늘의 음악 홈">
+          <span class="brand-icon" aria-hidden="true">♫</span>
+          <span>moodie</span>
+        </a>
+        <button class="text-button" id="show-library" type="button">내 보관함</button>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR DAILY SOUNDTRACK</p>
+        <h1 id="page-title">오늘은 어떤<br /><span>기분의 음악</span>이 필요해요?</h1>
+        <p class="hero-copy">지금 마음에 꼭 맞는 노래를 찾아볼게요.</p>
+      </section>
+
+      <section class="draw-section" aria-label="오늘의 노래 뽑기">
+        <div class="draw-copy">
+          <span class="draw-kicker">A LITTLE SURPRISE</span>
+          <h2>오늘의 노래를 뽑아볼까요?</h2>
+          <p>카드를 열면 오늘의 플레이리스트가 도착해요.</p>
+        </div>
+        <button class="draw-button" id="draw-song" type="button">
+          <span aria-hidden="true">🎲</span> 오늘의 노래 뽑기
+        </button>
+      </section>
+
+      <section class="mood-section" aria-labelledby="mood-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PICK YOUR MOOD</p>
+            <h2 id="mood-title">어떤 순간인가요?</h2>
+          </div>
+          <span class="section-note">하나를 골라주세요</span>
+        </div>
+        <div class="mood-grid" id="mood-grid"></div>
+      </section>
+
+      <section class="library-section" id="library-section" aria-labelledby="library-title" hidden>
+        <div class="section-heading library-heading">
+          <div>
+            <p class="eyebrow">YOUR COLLECTION</p>
+            <h2 id="library-title">내 보관함</h2>
+          </div>
+          <button class="text-button close-library" id="close-library" type="button">닫기</button>
+        </div>
+        <div class="library-columns">
+          <div>
+            <h3>❤️ 좋아요</h3>
+            <div class="saved-list" id="liked-list"></div>
+          </div>
+          <div>
+            <h3>최근 추천곡</h3>
+            <div class="saved-list" id="recent-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <footer>오늘의 기분에 어울리는 음악, moodie ♡</footer>
+    </main>
+
+    <dialog class="result-dialog" id="result-dialog" aria-labelledby="result-title">
+      <button class="dialog-close" id="close-result" type="button" aria-label="닫기">×</button>
+      <div class="result-inner">
+        <p class="eyebrow" id="result-eyebrow">YOUR SONG</p>
+        <div class="flip-card" id="flip-card">
+          <div class="album-art" id="album-art" aria-hidden="true">
+            <span class="album-sparkle">✦</span>
+            <span class="album-note">♫</span>
+            <span class="album-caption">A SONG FOR YOU</span>
+          </div>
+          <div class="song-info">
+            <span class="song-mood" id="song-mood"></span>
+            <h2 id="result-title"></h2>
+            <p id="result-artist"></p>
+          </div>
+        </div>
+        <div class="result-actions">
+          <button class="action-button like-button" id="like-song" type="button">♡ 좋아요</button>
+          <button class="action-button" id="redraw-song" type="button">↻ 다시 뽑기</button>
+          <a class="listen-button" id="listen-song" href="#" target="_blank" rel="noopener noreferrer">▶ Apple Music에서 듣기</a>
+          <details class="other-platforms">
+            <summary><span class="platform-chevron" aria-hidden="true">⌄</span><span>(다른 앱에서 듣기)</span></summary>
+            <div class="platform-links" id="platform-links"></div>
+          </details>
+        </div>
+      </div>
+    </dialog>
+    <script src="songs-catalog.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
